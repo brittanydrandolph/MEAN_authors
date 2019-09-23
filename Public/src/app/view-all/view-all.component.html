@@ -1,0 +1,20 @@
+<p>view-all works!</p>
+<button [routerLink]="['/new']">Add a new Author</button>
+<h2>We have quotes by:</h2>
+<table>
+    <thead>
+        <tr>
+        <th>Author</th>
+        <th>Actions Available</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let author of authors; let idx = index">
+        <td>{{author.name}}</td>
+        <td>
+            <button [routerLink]="['/edit/'+author._id]">Edit</button>
+            <button (click)="deleteAuthor(author._id)">Delete</button>
+        </td> 
+        </tr>
+    </tbody>
+</table>

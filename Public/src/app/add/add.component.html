@@ -1,0 +1,16 @@
+<p>add works!</p>
+<button [routerLink]="['/viewAll']">Home</button>
+<h2>Add a new author:</h2>
+<h5 *ngIf="!name.valid">Name must be at least 3 characters long</h5>
+<form (submit)="authorSubmit()">
+    Name: <input 
+    type="text" 
+    name="newAuthor.name" 
+    [(ngModel)]="newAuthor.name"
+    #name="ngModel"
+    required
+    minlength = "3"
+    >
+    <input *ngIf="name.valid" type="submit" value="Add this author">
+</form>
+<h3></h3>

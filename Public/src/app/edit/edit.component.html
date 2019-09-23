@@ -1,0 +1,22 @@
+    <p>edit works!</p>
+    <div id="component">
+        <a [routerLink]="['/viewAll']"><h2>Home</h2></a>
+        <h2>Edit this author:</h2>
+        <form (submit)="editSubmit()">
+            <h3>Name:</h3>
+            <h5 *ngIf="!name.valid">Stop it, you.</h5>
+            <input type="text" 
+            name="name" 
+            [(ngModel)]="author.name" 
+            [value]="author.name"
+            required
+            minlength="3"
+            #name="ngModel">
+            <br>
+            <button [routerLink]="['/viewAll']">Cancel</button>
+            <input *ngIf="name.valid" type="submit" value="Edit">
+            </form>
+            <div id="errors">	
+            <!-- <h3>{{name.valid | json}}</h3>	 -->
+            </div>
+        </div>
